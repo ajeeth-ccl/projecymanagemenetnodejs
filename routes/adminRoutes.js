@@ -8,4 +8,8 @@ router.post("/users",authMiddleware,adminMiddleware,adminController.createUser)
 
 router.get("/logs",authMiddleware,adminMiddleware,adminController.getAllLogs)
 
+router.get("/projects",authMiddleware,adminMiddleware,adminController.getAllProjects)
+
+router.get("/users",authMiddleware,adminMiddleware,adminController.getAllUsers)
+
 module.exports = router

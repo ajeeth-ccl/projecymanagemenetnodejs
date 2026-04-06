@@ -10,3 +10,11 @@ exports.createUserService = async(username,password)=>{
 exports.getAllLogService = async()=>{
     return await repo.getAllLogs()
 }
+
+exports.getAllUsersService = async()=>{
+    return await repo.getAllUsers()
+}
+
+exports.getAllProjectsService = async()=>{
+    return await repo.getAllProjects()
+}
