@@ -21,7 +21,11 @@ exports.loginUser = async({username,password})=>{
     if(!username || !password) throw new Error("username and password are required")
 
     const user = await repo.findUserByUsername(username)
+
     if(!user) throw new Error("no user found")
+   if(!user.is_active){
+throw new Error("account is deactivated contact admin")
+   }
 
 const valid = await bcrypt.compare(password,user.password)
 if(!valid) throw new Error ("Invalid password")

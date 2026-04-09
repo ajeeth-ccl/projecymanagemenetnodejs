@@ -12,4 +12,6 @@ router.get("/projects",authMiddleware,adminMiddleware,adminController.getAllProj
 
 router.get("/users",authMiddleware,adminMiddleware,adminController.getAllUsers)
 
+router.put('/users/:id/toggle',authMiddleware,adminMiddleware,adminController.toggleUserStatus)
+
 module.exports = router

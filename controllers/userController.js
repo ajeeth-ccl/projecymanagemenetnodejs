@@ -18,6 +18,9 @@ exports.login = async (req, res) => {
     res.json(result);
   } catch (err) {
     console.error("Login Error:", err.message);
+    if(err.message = "account is deactivated contact admin"){
+      res.status(403).json({message:err.message})
+    }
     res.status(400).json({ message: err.message });
   }
 };

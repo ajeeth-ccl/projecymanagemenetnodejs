@@ -19,3 +19,17 @@ const logSchema = new mongoose.Schema({
 // Atlast we have to check this Ajeeth
 
 module.exports = mongoose.models.Log || mongoose.model("Log", logSchema);
+
+
+
+
+
+
+
+
+
+
+
+
+
+

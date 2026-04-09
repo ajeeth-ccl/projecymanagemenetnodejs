@@ -2,7 +2,11 @@ const projectService = require("../services/projectService")
 
 exports.getProjectsByUser = async(req,res)=>{
     try{
-        const projects = await projectService.getProjectsByUser(req.user.id)
+        const userId = req.user.id
+        const page = parseInt(req.query.page) || 1
+        const limit = parseInt(req.query.limit) || 5
+        const search = req.query.search
+        const projects = await projectService.getProjectsByUser(userId,page,limit,search)
         res.json(projects)
     }catch(err){
            console.log("got project error",err)

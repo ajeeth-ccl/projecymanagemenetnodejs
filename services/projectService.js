@@ -1,7 +1,7 @@
 const projectRepo = require("../repositories/projectRepository")
 
-exports.getProjectsByUser = async(userId)=>{
-    return await projectRepo.getProjectsByUser(userId)
+exports.getProjectsByUser = async(userId,page,limit,search)=>{
+    return await projectRepo.getProjectsByUser(userId,page,limit,search)
 }
 
 exports.createProject = async(userId,projectData)=>{

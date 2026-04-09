@@ -7,14 +7,17 @@ exports.createUserService = async(username,password)=>{
     return await repo.createUser(username,hashed)
 }
 
-exports.getAllLogService = async()=>{
-    return await repo.getAllLogs()
+exports.getAllLogService = async(page,limit,search)=>{
+    return await repo.getAllLogs(page,limit,search)
 }
 
-exports.getAllUsersService = async()=>{
-    return await repo.getAllUsers()
+exports.getAllUsersService = async(page,limit,search)=>{
+    return await repo.getAllUsers(page,limit,search)
 }
 
-exports.getAllProjectsService = async()=>{
-    return await repo.getAllProjects()
+exports.getAllProjectsService = async(page,limit,search)=>{
+    return await repo.getAllProjects(page,limit,search)
+}
+exports.toggleUserStatusService = async(userId,isActive)=>{
+    return await repo.toggleUserStatus(userId,isActive)
 }
